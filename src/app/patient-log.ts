@@ -21,7 +21,6 @@ export class PatientLog {
   }
 
   getAllPatientInfoByID(pid: number | undefined): Observable<Info> {
-    this.url = 'http://localhost:8080/patients/{pid}';
-    return this.http.get<Info>(this.url);
+    return this.http.get<Info>(this.url + '/' + pid);
   }
 }
