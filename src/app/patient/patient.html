@@ -1,0 +1,16 @@
+<input type="text" [(ngModel)]="valueID">
+<button mat-raised-button (click)="buttonClick()">
+ Submit
+</button>
+@if (inSys()) { 
+<div class="top_container">
+    <div>{{name}}</div>
+    <div>{{valueID}}</div>
+</div>
+<div class="bottom_container">
+    <div>Age:{{age}}</div>
+    <div [style.background]="pressColor">Blood Pressure:{{press}}</div>
+    <div [style.background]="!cholHigh ? 'green' : 'red'">Cholesterol:{{chol}}</div>
+</div>
+} @else { <p>Please Enter Patient ID</p> }
+

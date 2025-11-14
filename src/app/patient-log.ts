@@ -1,0 +1,27 @@
+import { inject, Injectable } from '@angular/core';
+import { Info } from './patient/info';
+import { HttpClient } from '@angular/common/http'; 
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class PatientLog {
+
+  http = inject(HttpClient)
+  private url = 'http://localhost:8080/patients';
+
+  getPatientLog(): Observable<Info[]>{
+    return this.http.get<Info[]>(this.url)
+  }
+
+  async getAllPatientInfo(): Promise<Info[]> {
+    const data = await fetch(this.url);
+    return (await data.json()) ?? [];
+  }
+
+  getAllPatientInfoByID(pid: number | undefined): Observable<Info> {
+    this.url = 'http://localhost:8080/patients/{pid}';
+    return this.http.get<Info>(this.url);
+  }
+}
