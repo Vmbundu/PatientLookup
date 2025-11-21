@@ -1,16 +1,31 @@
-<input type="text" [(ngModel)]="valueID">
-<button mat-raised-button (click)="buttonClick()">
- Submit
-</button>
-@if (inSys()) { 
-<div class="top_container">
-    <div>{{name}}</div>
-    <div>{{valueID}}</div>
+<div class="search_container">
+    <input type="text" [(ngModel)]="valueID">
+    <button mat-fab (click)="buttonClick()">
+        Submit
+    </button>
 </div>
+
+@if (inSys()) { 
+<div class="card-group justify-content-center">
+  <div class="card bg-light " style="max-width: 12rem;">
+    <div class="card-header text-center">Name</div>
+    <div class="card-body text-center">
+      <p class="card-text">{{name}}</p>
+    </div>
+  </div>
+  <div class="card bg-secondary-subtle " style="max-width: 12rem;">
+    <div class="card-header text-center">ID</div>
+    <div class="card-body text-center">
+      <p class="card-text">{{valueID}}</p>
+    </div>
+  </div>
+</div>
+
+
 <div class="bottom_container">
-    <div>Age:{{age}}</div>
-    <div [style.background]="pressColor">Blood Pressure:{{press}}</div>
-    <div [style.background]="!cholHigh ? 'green' : 'red'">Cholesterol:{{chol}}</div>
+    <div>Age: {{age}}</div>
+    <div [style.background]="pressColor">Blood Pressure: {{press}}</div>
+    <div [style.background]="!cholHigh ? 'lightGreen' : 'lightSalmon'">Cholesterol: {{chol}}</div>
 </div>
 } @else { <p>Please Enter Patient ID</p> }
 

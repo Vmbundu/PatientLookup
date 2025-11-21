@@ -13,8 +13,9 @@ export class Patient implements OnInit{
   inSys = signal(false);
   clicked = signal(false);
   cholHigh = true;
-  pressColor = 'green'
-  hStyle = "visibility: hidden;";
+  pressColor = 'lightGreen';
+  presscolor = 'card text-bg-warning mb-3';
+  //hStyle = "visibility: hidden;";
   valueID: number | undefined = 0;
   age: number | undefined = 0;
   press: string | undefined = '';
@@ -55,11 +56,11 @@ export class Patient implements OnInit{
           this.cholHigh = this.chol > 140;
 
           if (this.press == 'Low'){
-          this.pressColor = 'green'
+          this.pressColor = 'lightGreen'
           } else if (this.press == 'Medium'){
-            this.pressColor = 'yellow'
+            this.pressColor = 'LightGoldenRodYellow'
           } else {
-            this.pressColor = 'red'
+            this.pressColor = 'lightSalmon'
           }
           this.inSys.set(true);
           },
