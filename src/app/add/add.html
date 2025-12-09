@@ -1,0 +1,17 @@
+<form [formGroup]="applyForm" (submit)="submitPatient()">
+    <label for="name">Name</label>
+    <input id="name" type="text" formControlName="Name" />
+    <label for="age">Age</label>
+    <input id="age" type="number" formControlName="Age" />
+    <label for="pressure">Pressure</label>
+    <input id="pressure" type="text" formControlName="Pressure" />
+    <label for="chol">Chol</label>
+    <input id="chol" type="number" formControlName="Chol" />
+    <button type="submit" class="primary">Apply now</button>
+ </form>
+
+@if (showToast()) {
+  <ngb-toast header="Patient Added!" (hidden)="showToast.set(false)">
+    <!-- Content here -->
+  </ngb-toast>
+}

@@ -1,11 +1,12 @@
 import { Component, inject, OnInit, signal} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { Info } from './info';
-import {PatientLog} from '../patient-log'
+import {PatientLog} from '../patient-log';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-patient',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './patient.html',
   styleUrl: './patient.css',
 })

@@ -23,4 +23,8 @@ export class PatientLog {
   getAllPatientInfoByID(pid: number | undefined): Observable<Info> {
     return this.http.get<Info>(this.url + '/' + pid);
   }
+
+  addPatient(data: any): Observable<any> {
+    return this.http.post<Info>(this.url, data);
+  }
 }
